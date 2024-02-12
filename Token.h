@@ -11,24 +11,24 @@ enum TokenType {
 
 class Token {
     private:
-        TokenType type;
-        string value;
-        int line;
+        TokenType typeValue;
+        string valueName;
+        int lineNum;
 
     public:
         Token(TokenType type, string value, int line){
-            this->type = type;
-            this->value = value;
-            this->line = line;
+            typeValue = type;
+            valueName = value;
+            lineNum = line;
         }
 
         string toString() const {
             string typeName;
-            if (type == 0) {
+            if (typeValue == 0) {
                 typeName = "COMMA";
             }
             stringstream out;
-            out << "(" << typeName << "," << "\"" << value << "\"" << line << ")";      //Create a token name function, which will convert the enum number to a string
+            out << "(" << typeName << "," << "\"" << valueName << "\"" << lineNum << ")";      //Create a token name function, which will convert the enum number to a string
             return out.str();
     }
 

@@ -14,7 +14,9 @@ class Scanner {
     public:
         Scanner(const string& input) : input(input) {}
 
-        Token scanToken () {
+            Token scanToken () {
+            cout << "Current input: " << input << endl;
+
             int initialSize = input.size();     //If whitespace is getting deleted, input.size() could change and that would throw off the for loop
             int line = 1;                       //Input begins on line 1
 
@@ -36,6 +38,7 @@ class Scanner {
                
                 if (input.at(i) == ',') {
                     TokenType type = COMMA;
+                    //cout << "TokenType number: " << type << endl;
                     string value = ",";   //Change this to whatever the line variable is                    
                     return Token(type, value, line);
                 }
